@@ -1,21 +1,25 @@
+import { DateTime } from 'luxon'
 import { BaseModel, column} from '@adonisjs/lucid/orm'
 
 export default class Professor extends BaseModel {
-  // Define explicitamente o nome da tabela
+  
   public static table = 'professores'
 
   @column({ isPrimary: true })
-  public id: number
+  declare id: number
+  
+  @column()
+  declare nome: string
 
   @column()
-  public nome: string
+  declare matricula: string
 
   @column()
-  public email: string
+  declare email: string
 
   @column.dateTime({ autoCreate: true })
-  public createdAt: Date
+  declare createdAt: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: Date
+  declare updatedAt: DateTime
 }

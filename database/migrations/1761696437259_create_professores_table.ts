@@ -8,7 +8,13 @@ export default class extends BaseSchema {
       table.increments('id')
       table.string('nome').notNullable()
       table.string('email').notNullable().unique()
-      table.timestamps(true)
+      this.schema.table('professores', (table) => {
+        table.string('matricula').notNullable().unique()
+      })
+
+
+      table.timestamp('created_at')
+      table.timestamp('updated_at')
     })
   }
 

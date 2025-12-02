@@ -16,11 +16,11 @@ router.get('/', async () => {
 })
 
 
-const AlunosController = () => import('#controllers/http/AlunosController')
-const ProfessoresController = () => import('#controllers/http/ProfessorController')
-const DisciplinasController= () => import('#controllers/http/DisciplinasController')
-const AulasController = () => import('#controllers/http/AulasController')
-const PresencasController = () => import('#controllers/http/PresencasController')
+const AlunosController = () => import('#controllers/Http/AlunosController')
+const ProfessoresController = () => import('#controllers/Http/ProfessorController')
+const DisciplinasController= () => import('#controllers/Http/DisciplinasController')
+const AulasController = () => import('#controllers/Http/AulasController')
+const PresencasController = () => import('#controllers/Http/PresencasController')
 
 router.resource('/alunos', AlunosController).apiOnly()
 router.resource('/professores', ProfessoresController).apiOnly()

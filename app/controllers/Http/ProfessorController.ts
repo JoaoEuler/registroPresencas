@@ -17,7 +17,7 @@ export default class ProfessoresController {
 
   async update({ params, request }: HttpContext) {
     const professor = await Professor.findOrFail(params.id)
-    professor.merge(request.only(['nome', 'email']))
+    professor.merge(request.only(['nome', 'email', 'matricula']))
     await professor.save()
     return professor
   }
